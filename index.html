@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nancy | Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* Global */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ff5c8a, #a64ac9, #d88cff);
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4 {
+      margin-bottom: 15px;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 70px 20px;
+      background: rgba(0,0,0,0.5);
+      border-bottom: 2px solid #ff66ff;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+
+    header h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 4rem;
+      color: #ff66ff;
+      margin-bottom: 15px;
+      text-shadow: 0 0 10px #ff99ff;
+    }
+
+    header p {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.3rem;
+      color: #ffe6ff;
+      font-weight: 500;
+    }
+
+    nav {
+      margin-top: 25px;
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: #ffe6ff;
+      font-weight: 600;
+      font-family: 'Montserrat', sans-serif;
+      transition: all 0.3s;
+    }
+
+    nav a:hover {
+      color: #ff33ff;
+      transform: scale(1.1);
+    }
+
+    /* Section */
+    section {
+      padding: 70px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    section h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      color: #ff33ff;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-shadow: 0 0 5px #fff;
+    }
+
+    /* About */
+    .about {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      text-align: left;
+    }
+
+    .about img {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      border: 5px solid #ff33ff;
+      object-fit: cover;
+      box-shadow: 0 8px 30px rgba(255, 51, 255, 0.6);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .about img:hover {
+      transform: scale(1.05) rotate(5deg);
+      box-shadow: 0 12px 35px rgba(255, 51, 255, 0.8);
+    }
+
+    .about div {
+      flex: 1;
+      min-width: 280px;
+      color: #fff;
+      font-size: 1.15rem;
+    }
+
+    /* Highlights Zig-Zag Section */
+    #highlights {
+      padding: 70px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .highlight-item {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 50px;
+    }
+
+    .highlight-item.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .highlight-item img {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      border: 5px solid #ff33ff;
+      object-fit: cover;
+      box-shadow: 0 8px 30px rgba(255, 51, 255, 0.6);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .highlight-item img:hover {
+      transform: scale(1.05) rotate(5deg);
+      box-shadow: 0 12px 35px rgba(255, 51, 255, 0.8);
+    }
+
+    .highlight-item div {
+      flex: 1;
+      min-width: 280px;
+      color: #fff;
+      font-size: 1.15rem;
+    }
+
+    /* Projects */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .project-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50% / 20%;
+      padding: 25px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+      transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+      font-family: 'Montserrat', sans-serif;
+      text-align: center;
+    }
+
+    .project-card h3 {
+      color: #ff99ff;
+      margin-bottom: 10px;
+      font-size: 1.6rem;
+      font-weight: 700;
+      text-shadow: 0 0 5px #fff;
+    }
+
+    .project-card p {
+      color: #ffe6ff;
+      font-size: 1rem;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px) rotate(-1deg);
+      box-shadow: 0 12px 30px rgba(255, 51, 255, 0.7);
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    /* Beliefs */
+    .beliefs-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .belief {
+      background: rgba(0,0,0,0.4);
+      padding: 25px;
+      border-radius: 50%;
+      width: 250px;
+      height: 250px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+      transition: all 0.3s;
+    }
+
+    .belief h3 {
+      color: #ff66ff;
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      text-shadow: 0 0 5px #fff;
+    }
+
+    .belief p {
+      color: #ffe6ff;
+      font-size: 0.95rem;
+    }
+
+    .belief:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 35px rgba(255, 51, 255, 0.8);
+    }
+
+    /* Contact */
+    #contact {
+      text-align: center;
+    }
+
+    #contact p {
+      font-size: 1.1rem;
+      margin: 12px 0;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    #contact a {
+      color: #ffccff;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    #contact a:hover {
+      color: #ff33ff;
+      text-shadow: 0 0 5px #fff;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: rgba(0,0,0,0.6);
+      color: #ffcce6;
+      margin-top: 50px;
+      font-family: 'Montserrat', sans-serif;
+      box-shadow: 0 -2px 10px rgba(255,51,255,0.4);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Nancy Sheoran</h1>
+    <p>B.Tech CSE Student | Web Developer | Creative Problem Solver</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#highlights">Highlights</a>
+      <a href="#projects">Projects</a>
+      <a href="#belief">Beliefs</a>
+      <a href="#contact">Contact</a>
+      <a href="nancyeducation.html">Education</a>
+      <a href="nancyhobby.html">Hobby</a>
+    </nav>
+  </header>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="about">
+      <img src="nancy9.jpeg" alt="Nancy Profile">
+      <div>
+        <p>Hello! I’m Nancy, a second-year B.Tech CSE student at IIIT Manipur. Passionate about coding, web development, and creative problem-solving. I enjoy building projects in HTML, CSS, JS, Python, and Java, from websites to fun interactive mini-games.  
+
+Outside tech, I love photography, painting, chess, and traveling, which keep my creativity flowing. My goal is to contribute to innovative software projects while continuously learning and evolving in this dynamic field.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Highlights Zig-Zag -->
+  <section id="highlights">
+    <h2>Highlights</h2>
+
+    <div class="highlight-item">
+      <img src="nancy7.jpeg" alt="Nancy Highlight 1">
+      <div>
+        <p> "Exploring coding challenges and building fun mini-projects in web development and Python. 
+        I enjoy experimenting with different frameworks and libraries to create interactive websites, 
+        dynamic applications, and small games. Each project allows me to practice problem-solving, optimize
+         my code, and learn new technologies while bringing creative ideas to life. </p>
+      </div>
+    </div>
+
+    <div class="highlight-item reverse">
+      <img src="nancy4.jpeg" alt="Nancy Highlight 2">
+      <div>
+        <p> "Engaging in creative hobbies like painting and photography to keep my imagination alive. 
+        Through these activities, I explore colors, composition, and perspectives, which not only
+         inspire my artistic side but also enhance my problem-solving and design thinking skills. 
+         These hobbies help me approach coding and projects with fresh ideas and creativity.</p>
+      </div>
+    </div>
+
+    <div class="highlight-item">
+      <img src="nancy1.jpeg" alt="Nancy Highlight 3">
+      <div>
+        <p>Traveling and learning new perspectives that inspire innovative ideas for my projects. 
+        Experiencing different cultures, meeting new people, and exploring unique environments broadens
+         my creativity and fuels fresh approaches to problem-solving. These adventures motivate me to 
+         think outside the box and bring more originality and depth to the projects I build.</p>
+      </div>
+    </div>
+
+<div class="highlight-item reverse">
+  <img src="nancy8.jpeg" alt="Nancy Highlight 4">
+  <div>
+    <p>Loving nature and helping people is my passion. I find joy in exploring the outdoors,
+       appreciating its beauty, and contributing positively to the world around me. Whether it’s
+       volunteering, supporting friends and community, or finding sustainable ways to interact with 
+       nature, these experiences inspire empathy, creativity, and a sense of purpose in everything I do.</p>
+  </div>
+</div>
+
+
+
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2>My Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <h3>💻 Portfolio Website</h3>
+        <p>A personal website built with HTML, CSS, and JS to showcase my skills and projects.</p>
+      </div>
+      <div class="project-card">
+        <h3>⚡ DSA Codes</h3>
+        <p>A collection of optimized C++ & Java solutions for learning and interview prep.</p>
+      </div>
+      <div class="project-card">
+        <h3>🌐 Mini Apps/Games</h3>
+        <p>TwinHunt: Memory card game to match emoji pairs, boosting focus and memory while having fun.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Beliefs -->
+  <section id="belief">
+    <h2>My Beliefs</h2>
+    <div class="beliefs-container">
+      <div class="belief">
+        <h3>🌱 Growth</h3>
+        <p>Every day is an opportunity to learn and improve.</p>
+      </div>
+      <div class="belief">
+        <h3>💡 Innovation</h3>
+        <p>Creative solutions make technology impactful and accessible.</p>
+      </div>
+      <div class="belief">
+        <h3>🤝 Teamwork</h3>
+        <p>Collaboration turns good ideas into great projects.</p>
+      </div>
+      <div class="belief">
+        <h3>🎨 Creativity</h3>
+        <p>Imagination + coding = unique and fun experiences.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Get in Touch</h2>
+    <p><a href="mailto:nancysheoran052@gmail.com">nancysheoran052@gmail.com</a></p>
+    <p><a href="https://github.com/nancysheoran" target="_blank">github.com/nancysheoran</a></p>
+    <p><a href="https://www.linkedin.com/in/nancy-sheoran777" target="_blank">linkedin.com/in/nancy-sheoran777</a></p>
+    <p><a href="https://www.instagram.com/_nancysheoran_" target="_blank">@_nancysheoran_</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Nancy | Built with ❤️ using HTML & CSS</p>
+  </footer>
+
+</body>
+</html>
+

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nancy | Hobbies</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* Global */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ff5c8a, #a64ac9, #d88cff);
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      margin-bottom: 15px;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 70px 20px;
+      background: rgba(0,0,0,0.5);
+      border-bottom: 2px solid #ff33ff;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+
+    header h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 4rem;
+      color: #ff33ff;
+      margin-bottom: 15px;
+      text-shadow: 0 0 10px #fff;
+    }
+
+    header p {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.3rem;
+      color: #ffe6ff;
+    }
+
+    nav {
+      margin-top: 25px;
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: #ffe6ff;
+      font-weight: 600;
+      font-family: 'Montserrat', sans-serif;
+      transition: all 0.3s;
+    }
+
+    nav a:hover {
+      color: #ff33ff;
+      transform: scale(1.1);
+    }
+
+    /* Section */
+    section {
+      padding: 70px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    section h2 {
+      text-align: center;
+      margin-bottom: 50px;
+      font-size: 2.5rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      color: #ff33ff;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-shadow: 0 0 5px #fff;
+    }
+
+    /* Hobbies Cards */
+    .hobbies {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* two cards per row */
+      gap: 40px;
+      justify-items: center;
+    }
+
+    .hobby-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 30px;
+      padding: 25px;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+      transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+      width: 90%;
+    }
+
+    .hobby-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 12px 35px rgba(255,51,255,0.7);
+      background: rgba(255,255,255,0.15);
+    }
+
+    .hobby-card img {
+      width: 120px; /* bigger image */
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #ff33ff;
+      box-shadow: 0 0 15px #fff;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .hobby-card img:hover {
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 0 0 25px #ff99ff;
+    }
+
+    .hobby-card h3 {
+      color: #ffccff;
+      font-size: 1.7rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .hobby-card p {
+      font-size: 1.1rem;
+      color: #ffe6ff;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: rgba(0,0,0,0.6);
+      color: #ffcce6;
+      margin-top: 50px;
+      font-family: 'Montserrat', sans-serif;
+      box-shadow: 0 -2px 10px rgba(255,51,255,0.4);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>My Hobbies</h1>
+    <p>Things I love doing in my free time</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="nancyeducation.html">Education</a>
+    </nav>
+  </header>
+
+  <!-- Hobbies -->
+  <section>
+    <h2>What I Enjoy</h2>
+    <div class="hobbies">
+      <div class="hobby-card">
+        <img src="nancy16.png" alt="Reading">
+        <div>
+          <h3>📚 Reading</h3>
+          <p>I love exploring new ideas, tech blogs, and self-growth books that broaden my perspective.</p>
+        </div>
+      </div>
+
+      <div class="hobby-card">
+        <img src="nancy4.jpeg" alt="Coding">
+        <div>
+          <h3>💻 Coding</h3>
+          <p>Practicing DSA problems and building creative projects keeps my skills sharp and exciting.</p>
+        </div>
+      </div>
+
+      <div class="hobby-card">
+        <img src="nancy15.jpeg" alt="Basketball">
+        <div>
+          <h3>🏀 Basketball</h3>
+          <p>Playing basketball and outdoor sports keeps me active, healthy, and energized.</p>
+        </div>
+      </div>
+
+      <div class="hobby-card">
+        <img src="nancy14.jpeg" alt="Drawing">
+        <div>
+          <h3>🎨 Drawing</h3>
+          <p>Sketching and painting help me express creativity and relax my mind.</p>
+        </div>
+      </div>
+
+      <div class="hobby-card">
+        <img src="nancy13.jpeg" alt="Web Design">
+        <div>
+          <h3>🌐 Web Designing</h3>
+          <p>Designing websites allows me to combine creativity with coding skills.</p>
+        </div>
+      </div>
+
+      <div class="hobby-card">
+        <img src="nancy2.jpeg" alt="Video Editing">
+        <div>
+          <h3>🎬 Video Editing</h3>
+          <p>Editing videos is a fun way to tell stories visually and creatively.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Nancy | Hobbies Page</p>
+  </footer>
+
+</body>
+</html>
+
